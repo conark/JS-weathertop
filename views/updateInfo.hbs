@@ -1,0 +1,33 @@
+{{> menu id="updateInfo"}}
+
+<section class="ui center aligned middle aligned segment">
+  <section class="ui center aligned middle aligned segment">
+    <h1>
+      User Info/Update
+    </h1>
+    <form class="ui stacked segment form" action="/editUser" method="POST">
+      <div class="two fields">
+        <div class="field">
+          <label>First Name</label>
+          <input placeholder="{{user.firstName}}" type="text" name="firstName" value="{{user.firstName}}">
+        </div>
+        <div class="field">
+          <label>Last Name</label>
+          <input placeholder="{{user.lastName}}" type="text" name="lastName" value="{{user.lastName}}">
+        </div>
+        <div class="field">
+          <label>Email</label>
+          <input placeholder="{{user.email}}" type="text" name="email" value="{{user.email}}">
+        </div>
+        <div class="field">
+          <label>Password</label>
+          <input placeholder="{{user.password}}" type="password" name="password" value="{{user.password}}">
+        </div>
+      </div>
+      <button class="ui blue submit button">Update Info</button>
+    </form>
+
+  </section>
+</section>
+
+

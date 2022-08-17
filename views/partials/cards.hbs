@@ -1,0 +1,84 @@
+<div class="card">
+  <div class="content">
+    <i class="right floated big purple map pin icon"></i>
+    <div class="header">
+        {{station.name}}
+    </div>
+    <div class="meta">
+      <p>Latitude:  {{latitude}} </p>
+      <p> Longitude:  {{longitude}} </p>
+    </div>
+  </div>
+</div>
+<div class="card">
+  <div class="content">
+    <i class="{{weatherIcon}}"></i>
+    <div class="header">
+      Weather
+    </div>
+    <div class="meta">
+      <p> {{latestWeatherCode}} </p>
+    </div>
+  </div>
+</div>
+<div class="card">
+  <div class="content">
+    <i class="{{tempIcon}}"></i>
+    <div class="header">
+      Temp
+    </div>
+    <div class="meta">
+      <p> {{latestTemp}} °C</p>
+      <p> {{latestTempF}} °F</p>
+      <div class="right floated meta"><i class="{{tempTrend}}"></i></div>
+      <p> Max: {{maxTemp}}°C </p>
+      <p> Min: {{minTemp}}°C </p>
+    </div>
+  </div>
+</div>
+<div class="card">
+  <div class="content">
+    <i class="{{windIcon}}"></i>
+    <div class="header">
+      Wind
+    </div>
+    <div class="meta">
+      <p> {{latestWindBeaufort}} bft</p>
+      <p> {{latestWindDirection}}</p>
+      <p> Feels like {{latestWindChill}}</p>
+      <div class="right floated meta"><i class="{{windTrend}}"></i></div>
+      <p> Max: {{maxWind}} kMh </p>
+      <p> Min: {{minWind}} kMh  </p>
+    </div>
+  </div>
+</div>
+<div class="card">
+  <div class="content">
+    <i class="{{pressureIcon}}"></i>
+    <div class="header">
+      Pressure
+    </div>
+    <div class="meta">
+      <p> {{latestPressure}} hPa </p>
+      <div class="right floated meta"><i class="{{pressureTrend}}"></i></div>
+      <p>
+        Max: {{maxPressure}} hPa
+      </p>
+      <p>
+        Min: {{minPressure}} hPa
+      </p>
+    </div>
+  </div>
+</div>
+<!--
+<div class="column">
+        #{if _trend == 1}
+        <i class="right floated big arrow up ${_colour} icon"></i>
+        #{/if}
+        #{elseif _trend == -1}
+        <i class="right floated big arrow down ${_colour} icon"></i>
+        #{/elseif}
+      </div>
+    </div>
+  </div>
+</div>-->

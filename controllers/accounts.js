@@ -3,6 +3,7 @@
 const userstore = require("../models/user-store");
 const logger = require("../utils/logger");
 const uuid = require("uuid");
+const stationStore = require("../models/station-store");
 
 const accounts = {
   index(request, response) {
@@ -20,7 +21,7 @@ const accounts = {
   },
 
   logout(request, response) {
-    response.cookie("playlist", "");
+    response.cookie("station", "");
     response.redirect("/");
   },
 
@@ -42,7 +43,7 @@ const accounts = {
   authenticate(request, response) {
     const user = userstore.getUserByEmail(request.body.email);
     if (user) {
-      response.cookie("playlist", user.email);
+      response.cookie("station", user.email);
       logger.info(`logging in ${user.email}`);
       response.redirect("/dashboard");
     } else {
@@ -51,9 +52,10 @@ const accounts = {
   },
 
   getCurrentUser(request) {
-    const userEmail = request.cookies.playlist;
+    const userEmail = request.cookies.station;
     return userstore.getUserByEmail(userEmail);
   }
+
 };
 
 module.exports = accounts;
