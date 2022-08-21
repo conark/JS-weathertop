@@ -40,28 +40,28 @@ const stationStore = {
   addReading(id, reading) {
     const station = this.getStation(id);
     station.readings.push(reading);
+    /*
+        let duration = 0;
+        for (let i = 0; i < station.readings.length; i++) {
+          duration += station.readings[i].duration;
+        }
 
-    let duration = 0;
-    for (let i = 0; i < station.readings.length; i++) {
-      duration += station.readings[i].duration;
-    }
-
-    station.duration = duration;
-    this.store.save();
+        station.duration = duration;
+        this.store.save();*/
   },
 
   removeReading(id, readingId) {
     const station = this.getStation(id);
-    const readings = station.readings;
-    _.remove(readings, { id: readingId });
+    // const readings = station.readings;
+    _.remove(station.readings, { id: readingId });
     this.store.save();
   },
-
-  getReading(id, readingId) {
-    const station = this.store.findOneBy(this.collection, { id: id });
-    const readings = station.readings.filter(reading => reading.id == readingId);
-    return readings[0];
-  }
+  /*
+    getReading(id, readingId) {
+      const station = this.store.findOneBy(this.collection, { id: id });
+      const readings = station.readings.filter(reading => reading.id == readingId);
+      return readings[0];
+    }*/
 
 };
 

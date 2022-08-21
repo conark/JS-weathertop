@@ -13,10 +13,10 @@ const stationCtrl = {
     const viewData = {
       title: "Station",
       station: station,
- /*     stationSummary : {
-        shortestReading : stationAnalytics.getShortestReading(station),
-        duration : stationAnalytics.getStationDuration(station)
-      }*/
+      /*     stationSummary : {
+             shortestReading : stationAnalytics.getShortestReading(stationCtrl),
+             duration : stationAnalytics.getStationDuration(stationCtrl)
+           }*/
     };
     response.render("station", viewData);
   },
@@ -32,7 +32,7 @@ const stationCtrl = {
   addReading(request, response) {
     const stationId = request.params.id;
     const date = new Date();
- //   const station = stationStore.getStation(stationId);
+    //   const stationCtrl = stationStore.getStation(stationId);
     const newReading = {
       id: uuid.v1(),
       date: date,

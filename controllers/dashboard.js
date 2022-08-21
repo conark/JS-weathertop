@@ -3,7 +3,7 @@
 const accounts = require("./accounts.js");
 const logger = require("../utils/logger");
 const stationStore = require("../models/station-store");
-const stationAnalytics = require("../utilss/station-analytics.js");
+//const stationAnalytics = require("../utils/station-analytics.js");
 const uuid = require("uuid");
 
 const dashboard = {
@@ -13,7 +13,7 @@ const dashboard = {
     const viewData = {
       title: "Station Dashboard",
       stations: stationStore.getUserStations(loggedInUser.id),
-      latestWeather: latestWeather
+      latestReading: latestReading
     };
     logger.info("about to render", stationStore.getAllStations());
     response.render("dashboard", viewData);

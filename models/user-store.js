@@ -24,11 +24,11 @@ const userStore = {
     return this.store.findOneBy(this.collection, { email: email });
   },
 
-  updateInfo(accounts, updateInfo) {
-    userStore.firstname = updateInfo.firstname;
-    userStore.lastname = updateInfo.lastname;
-    userStore.email = updateInfo.email;
-    userStore.password = updateInfo.password;
+  update(accounts, update) {
+    userStore.firstname = update.firstname;
+    userStore.lastname = update.lastname;
+    userStore.email = update.email;
+    userStore.password = update.password;
     this.store.save();
   }
 

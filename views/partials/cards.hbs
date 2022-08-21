@@ -1,8 +1,14 @@
+<!-- You MUST include jQuery before Fomantic -->
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script>
+<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/fomantic-ui@2.8.8/dist/semantic.min.css">
+<script src="https://cdn.jsdelivr.net/npm/fomantic-ui@2.8.8/dist/semantic.min.js"></script>
+<div class="ui five doubling cards">
+
 <div class="card">
   <div class="content">
     <i class="right floated big purple map pin icon"></i>
     <div class="header">
-        {{station.name}}
+      {{stationCtrl.name}}
     </div>
     <div class="meta">
       <p>Latitude:  {{latitude}} </p>
@@ -69,6 +75,8 @@
       </p>
     </div>
   </div>
+</div>
+
 </div>
 <!--
 <div class="column">

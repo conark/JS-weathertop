@@ -14,10 +14,10 @@ const userUpdate = {
       title: "Edit User info",
 
     };
-    response.render("reading", viewData);
+    response.render("userUpdate", viewData);
   },
 
-  updateInfo(request, response){
+  updateUser(request, response){
     const loggedInUser = accounts.getCurrentUser(request);
     logger.debug(`Updating user`);
     const newUser = {
@@ -27,7 +27,7 @@ const userUpdate = {
       password: request.body.password,
     };
     logger.info(`update user ${loggedInUser}`);
-    userstore.updateInfo(loggedInUser,newUser);
+    userstore.update(loggedInUser,newUser);
     response.cookie("station", "");
     response.redirect("/");
 
