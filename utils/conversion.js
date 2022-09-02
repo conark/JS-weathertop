@@ -53,9 +53,41 @@ const conversion = {
       }
 
     },
+  weatherIconColour(code){
+    if (code === 100){
+      return "red";
+    }
+    else if (code === 200){
+      return "grey";
+    }
+    else if (code === 300){
+      return "grey";
+    }
+    else if (code === 400){
+      return "blue";
+    }
+    else if (code === 500){
+      return "blue";
+    }
+    else if (code === 600){
+      return "blue";
+    }
+    else if (code === 700){
+      return "blue";
+    }
+    else if (code === 800){
+      return "yellow";
+    }
+    else{
+      return "No Reading !";
+    }
+
+  },
+
 
     tempConvertToF(temperature) {
-    return (temperature *1.8) + 32 ;
+      console.log("temp:", temperature)
+      return temperature * 1.8 + 32;
     },
 
    beaufort(windSpeed) {
@@ -90,6 +122,7 @@ const conversion = {
   },
 
     windDirectionConvert(windDirection) {
+    console.log("Wind Direction:", windDirection)
       if (windDirection > 348.75 && windDirection <= 11.25){
         return "N";
       }
@@ -145,9 +178,8 @@ const conversion = {
     },
 
     windChillConvert (temperature, windSpeed){
-      const windChill = (Math.round((13.12 + (0.6215 * temperature) - 11.37 * Math.pow(windSpeed, 0.16) +
-        0.3965 * temperature * Math.pow(windSpeed, 0.16)) * 100.0) / 100.0);
-
+     return (13.12 + (0.6215 * temperature) - 11.37 * Math.pow(windSpeed, 0.16) +
+        0.3965 * temperature * Math.pow(windSpeed, 0.16));
 
     }
 

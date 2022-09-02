@@ -11,25 +11,26 @@ const userUpdate = {
     const user = userstore.getUserByEmail(loggedInUser.email);
     logger.debug(`User update`);
     const viewData = {
-      title: "Edit User info",
+      title: 'Edit User info',
+      user:user,
 
     };
-    response.render("userUpdate", viewData);
+    response.render("userupdate", viewData);
   },
 
   updateUser(request, response){
     const loggedInUser = accounts.getCurrentUser(request);
     logger.debug(`Updating user`);
-    const newUser = {
-      firstname: request.body.firstname,
-      lastname: request.body.lastname,
+    const updateUser = {
+      firstname: request.body.firstName,
+      lastname: request.body.lastName,
       email: request.body.email,
       password: request.body.password,
     };
-    logger.info(`update user ${loggedInUser}`);
-    userstore.update(loggedInUser,newUser);
+    logger.info(`update user ＆＆＆＆＆`,request.body);
+    userstore.update(loggedInUser,updateUser);
     response.cookie("station", "");
-    response.redirect("/");
+    response.redirect("/login");
 
   }
 };

@@ -2,6 +2,7 @@
 
 const _ = require("lodash");
 const JsonStore = require("./json-store");
+const logger = require("../utils/logger");
 
 const userStore = {
   store: new JsonStore("./models/user-store.json", { users: [] }),
@@ -24,11 +25,12 @@ const userStore = {
     return this.store.findOneBy(this.collection, { email: email });
   },
 
-  update(accounts, update) {
-    userStore.firstname = update.firstname;
-    userStore.lastname = update.lastname;
-    userStore.email = update.email;
-    userStore.password = update.password;
+  update(loggedInUser,updateUser) {
+    loggedInUser.firstname = updateUser.firstname;
+    loggedInUser.lastname = updateUser.lastname;
+    loggedInUser.email = updateUser.email;
+    loggedInUser.password = updateUser.password;
+    logger.info(`UPDATED user `,updateUser);
     this.store.save();
   }
 

@@ -1,3 +1,4 @@
+
 "use strict";
 
 const logger = require("../utils/logger");
@@ -12,40 +13,41 @@ const stationCtrl = {
     const station = stationStore.getStation(id);
     const viewData = {
       title: "Station",
-      station: station,
-      /*     stationSummary : {
-             shortestReading : stationAnalytics.getShortestReading(stationCtrl),
-             duration : stationAnalytics.getStationDuration(stationCtrl)
-           }*/
-    };
-    response.render("station", viewData);
-  },
+      station: stationStore.getStation(id),
+    getLatestReading: stationAnalytics.getLatestReading(station),
 
-  deleteReading(request, response) {
-    const stationId = request.params.id;
-    const readingId = request.params.readingId;
-    logger.debug(`Deleting Reading ${readingId} from Station ${stationId}`);
-    stationStore.removeReading(stationId, readingId);
-    response.redirect("/station/" + stationId);
-  },
+/* stationSummary :{
+     latestReading: stationAnalytics.getLatestReading(station)
+   }*/
+};
+response.render("station", viewData);
+},
 
-  addReading(request, response) {
+deleteReading(request, response) {
+const stationId = request.params.id;
+const readingId = request.params.readingid;
+logger.debug(`Deleting Reading ${readingId} from Station ${stationId}`);
+stationStore.removeReading(stationId, readingId);
+response.redirect("/station/" + stationId);
+},
+
+addReading(request, response)  {
     const stationId = request.params.id;
-    const date = new Date();
-    //   const stationCtrl = stationStore.getStation(stationId);
-    const newReading = {
-      id: uuid.v1(),
-      date: date,
-      code: request.body.code,
-      temperature: request.body.temperature,
-      windSpeed: request.body.windSpeed,
-      windDirection: request.body.windDirection,
-      pressure: request.body.pressure
-    };
-    logger.debug("New Reading = ", newReading);
-    stationStore.addReading(stationId, newReading);
-    response.redirect("/station/" + stationId);
-  }
+ const date = new Date();
+ const station = stationStore.getStation(stationId);
+ const newReading = {
+   id: uuid.v1(),
+   date: date,
+   code: Number(request.body.code),
+   temperature: Number(request.body.temperature),
+   windSpeed: Number(request.body.windSpeed),
+   windDirection: Number(request.body.windDirection),
+   pressure: Number(request.body.pressure)
+ };
+logger.debug("New Reading = ", newReading);
+stationStore.addReading(stationId, newReading);
+response.redirect("/station/" + stationId);
+}
 };
 
 module.exports = stationCtrl;

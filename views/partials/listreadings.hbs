@@ -7,34 +7,37 @@
     <th>Wind Speed</th>
     <th>Wind Direction</th>
     <th>Pressure</th>
-    <th></th>
+    <th>
+    </th>
+
+
   </tr>
   </thead>
-  <tbody>
-  {{#each stationCtrl.readings}}
-    <tr>
-      <td>
-        {{date}}
-      </td>
-      <td>
-        {{code}}
-      </td>
-      <td>
-        {{temperature}}
-      </td>
-      <td>
-        {{windSpeed}}
-      </td>
-      <td>
-        {{windDirection}}
-      </td>
-      <td>
-        {{pressure}}
-      </td>
-      <td>
-        <a href="/stations/{{..stationCtrl.id}}/deletereading/{{id}}" class="ui tiny red button">Delete</a>
-      </td>
-    </tr>
-  {{/each}}
-  </tbody>
+ <tbody>
+{{#each station.readings}}
+  <tr>
+    <td>
+      {{date}}
+    </td>
+    <td>
+      {{code}}
+    </td>
+    <td>
+      {{temperature}}
+    </td>
+    <td>
+      {{windSpeed}}
+    </td>
+    <td>
+      {{windDirection}}
+    </td>
+    <td>
+      {{pressure}}
+    </td>
+    <td>
+      <a href="/station/{{../station.id}}/deletereading/{{id}}" class="ui tiny red button">Delete</a>
+    </td>
+  </tr>
+{{/each}}
+</tbody>
 </table>

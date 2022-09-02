@@ -38,10 +38,163 @@
           "id": "05",
           "date": "5-9-2022 18:10",
           "code": 803,
-          "temperature": 17.58,
-          "windSpeed": 1.34,
+          "temperature": 17,
+          "windSpeed": 10,
           "pressure": 1019,
           "windDirection": 197
+        }
+      ]
+    },
+    {
+      "id": "182cbb10-247d-11ed-b109-1786b57ad072",
+      "userid": "3ad52697-6d98-4d80-8273-084de55a86c0",
+      "name": "Tokyo",
+      "latitude": "12",
+      "longitude": "12",
+      "readings": [
+        {
+          "id": "08",
+          "date": "25-08-2022 07:00",
+          "code": 200,
+          "temperature": 0.5,
+          "windSpeed": 3.5,
+          "pressure": 1002,
+          "windDirection": 90
+        },
+        {
+          "id": "09",
+          "date": "25-08-2022 07:10",
+          "code": 500,
+          "temperature": 6,
+          "windSpeed": 2,
+          "windDirection": 200,
+          "pressure": 1004
+        },
+        {
+          "id": "85492ea0-28b9-11ed-baf7-67a0a42f5cb2",
+          "date": "2022-08-30T23:14:38.856Z",
+          "code": 100,
+          "temperature": 12,
+          "windSpeed": 1,
+          "windDirection": 12,
+          "pressure": 1222
+        },
+        {
+          "id": "9f03ae00-28ba-11ed-baf7-67a0a42f5cb2",
+          "date": "2022-08-30T23:22:31.519Z",
+          "code": 500,
+          "temperature": 12,
+          "windSpeed": 100,
+          "windDirection": 12,
+          "pressure": 1000
+        },
+        {
+          "id": "92658570-2a3a-11ed-9f7b-8b5f7daabd2f",
+          "date": "2022-09-01T21:10:57.093Z",
+          "code": 300,
+          "temperature": 5,
+          "windSpeed": 8,
+          "windDirection": 134,
+          "pressure": 345
+        },
+        {
+          "id": "69862300-2a42-11ed-8ddb-bf919d8378a9",
+          "date": "2022-09-01T22:07:04.496Z",
+          "code": 600,
+          "temperature": 4,
+          "windSpeed": 1,
+          "windDirection": 34,
+          "pressure": 344
+        }
+      ]
+    },
+    {
+      "id": "4e7e6c90-2482-11ed-a605-0954bd89b287",
+      "userid": "3ad52697-6d98-4d80-8273-084de55a86c0",
+      "name": "koma",
+      "latitude": "78",
+      "longitude": "12",
+      "readings": [
+        {
+          "id": "8c639dc0-26dd-11ed-836d-69cb0de885ce",
+          "date": "2022-08-28T14:27:30.332Z",
+          "code": 200,
+          "temperature": 12,
+          "windSpeed": 10,
+          "windDirection": 10,
+          "pressure": 1200
+        },
+        {
+          "id": "d1b52d20-28a5-11ed-85dd-1d9a7dfda6c8",
+          "date": "2022-08-30T20:53:37.138Z",
+          "code": 100,
+          "temperature": 17,
+          "windSpeed": 2,
+          "pressure": 1019,
+          "windDirection": 197
+        },
+        {
+          "id": "7ebf5360-28ab-11ed-b157-43537a558193",
+          "date": "2022-08-30T21:34:14.934Z",
+          "code": 100,
+          "temperature": 0.5,
+          "windSpeed": 3.5,
+          "pressure": 1002,
+          "windDirection": 90
+        },
+        {
+          "id": "88da81d0-28b0-11ed-bf31-890fcf3f6906",
+          "date": "2022-08-30T22:10:19.373Z",
+          "code": 200,
+          "temperature": 12,
+          "windSpeed": 10,
+          "windDirection": 21,
+          "pressure": 1200
+        },
+        {
+          "id": "cdc80970-291e-11ed-843a-ef24ee505629",
+          "date": "2022-08-31T11:19:39.653Z",
+          "code": 100,
+          "temperature": 2,
+          "windSpeed": 2,
+          "windDirection": 45,
+          "pressure": 150
+        },
+        {
+          "id": "e03a3150-2a4a-11ed-882b-3f9e291f3e4f",
+          "date": "2022-09-01T23:07:39.621Z",
+          "code": 800,
+          "temperature": 2,
+          "windSpeed": 23,
+          "windDirection": 24,
+          "pressure": 11
+        }
+      ]
+    },
+    {
+      "id": "5104bab0-27e2-11ed-b021-7b2a4c046c87",
+      "userid": "3ad52697-6d98-4d80-8273-084de55a86c0",
+      "name": "Sakata",
+      "latitude": "100",
+      "longitude": "12",
+      "readings": [
+        {
+          "id": "d1b1ca70-27e4-11ed-a624-c57a74f71f60",
+          "date": "2022-08-29T21:52:04.247Z",
+          "code": 400,
+          "temperature": 12,
+          "windSpeed": 100,
+          "windDirection": 12,
+          "pressure": 1000
+        },
+        {
+          "id": "6b576b40-28bb-11ed-947c-6b98e62d33b4",
+          "date": "2022-08-30T23:28:14.323Z",
+          "code": 300,
+          "temperature": 5,
+          "windSpeed": 67,
+          "windDirection": 34,
+          "pressure": 30
         }
       ]
     }

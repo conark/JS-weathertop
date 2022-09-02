@@ -1,3 +1,4 @@
+
 {{> menu id = "userupdate"}}
 
 <section class="ui center aligned middle aligned segment">
@@ -5,15 +6,15 @@
     <h1>
       User Info/Update
     </h1>
-    <form class="ui stacked segment form" action="/userupdate" method="POST">
+    <form class="ui stacked segment form" action="/userupdate/{{user.id}}" method="POST">
       <div class="two fields">
         <div class="field">
           <label>First Name</label>
-          <input placeholder="{{user.firstName}}" type="text" name="firstName" value="{{user.firstName}}">
+          <input placeholder="{{user.firstname}}" type="text" name="firstName" value="{{user.firstname}}">
         </div>
         <div class="field">
           <label>Last Name</label>
-          <input placeholder="{{user.lastName}}" type="text" name="lastName" value="{{user.lastName}}">
+          <input placeholder="{{user.lastname}}" type="text" name="lastName" value="{{user.lastname}}">
         </div>
         <div class="field">
           <label>Email</label>

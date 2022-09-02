@@ -6,87 +6,84 @@
 
 <div class="card">
   <div class="content">
-    <i class="right floated big purple map pin icon"></i>
+    <i class="right floated huge purple map pin icon"></i>
     <div class="header">
-      {{stationCtrl.name}}
+      <h2 class="ui header"> {{station.name}}</h2>
     </div>
-    <div class="meta">
-      <p>Latitude:  {{latitude}} </p>
-      <p> Longitude:  {{longitude}} </p>
+    <br>
+    <div class="ui left aligned content">
+      <p>Latitude: {{station.latitude}} </p>
+      <p>Longitude: {{station.longitude}} </p>
     </div>
   </div>
 </div>
 <div class="card">
   <div class="content">
-    <i class="{{weatherIcon}}"></i>
+    <i class="right floated {{getLatestReading.weatherIconColour}} huge {{getLatestReading.weatherIcon}} icon"></i>
     <div class="header">
-      Weather
+      <h2 class="ui header">Weather</h2>
     </div>
-    <div class="meta">
-      <p> {{latestWeatherCode}} </p>
+    <br>
+    <div class="left aligned content">
+      <p> {{getLatestReading.weatherConvert}} </p>
     </div>
   </div>
 </div>
 <div class="card">
   <div class="content">
-    <i class="{{tempIcon}}"></i>
+    <i class="right floated huge blue temperature high icon"></i>
     <div class="header">
-      Temp
+      <h2 class="ui header">Temp</h2>
     </div>
-    <div class="meta">
-      <p> {{latestTemp}} °C</p>
-      <p> {{latestTempF}} °F</p>
-      <div class="right floated meta"><i class="{{tempTrend}}"></i></div>
-      <p> Max: {{maxTemp}}°C </p>
-      <p> Min: {{minTemp}}°C </p>
+    <br>
+    <div class="left aligned content">
+      <p> {{getLatestReading.temperature}} °C</p>
+      <p> {{getLatestReading.tempF}} °F</p>
+    </div>
+    <div class="right aligned content">
+      <i class="right floated blue huge {{getLatestReading.tempTrend}} icon"></i>
+    </div>
+    <div class="left aligned content">
+      <p> Max: {{getLatestReading.maxTemp}}°C </p>
+      <p> Min: {{getLatestReading.minTemp}}°C </p>
     </div>
   </div>
 </div>
 <div class="card">
   <div class="content">
-    <i class="{{windIcon}}"></i>
+    <i class="right floated huge green wind icon"></i>
     <div class="header">
-      Wind
+      <h2 class="ui header">Wind</h2>
     </div>
-    <div class="meta">
-      <p> {{latestWindBeaufort}} bft</p>
-      <p> {{latestWindDirection}}</p>
-      <p> Feels like {{latestWindChill}}</p>
-      <div class="right floated meta"><i class="{{windTrend}}"></i></div>
-      <p> Max: {{maxWind}} kMh </p>
-      <p> Min: {{minWind}} kMh  </p>
+    <br>
+    <div class="left aligned content">
+      <p> {{getLatestReading.beaufort}} bft</p>
+      <p> {{getLatestReading.windDirection}}</p>
+      <p> Feels like {{getLatestReading.windChill}}</p>
+      <i class="right floated green huge {{getLatestReading.windTrend}} icon"></i>
+      <p> Max: {{getLatestReading.maxWind}} kMh </p>
+      <p> Min: {{getLatestReading.minWind}} kMh  </p>
     </div>
   </div>
 </div>
 <div class="card">
   <div class="content">
-    <i class="{{pressureIcon}}"></i>
+    <i class="right floated huge orange life ring outline icon"></i>
     <div class="header">
-      Pressure
+      <h2 class="ui header">Pressure</h2>
     </div>
-    <div class="meta">
-      <p> {{latestPressure}} hPa </p>
-      <div class="right floated meta"><i class="{{pressureTrend}}"></i></div>
+    <br>
+    <div class="left aligned content">
+      <p> {{getLatestReading.pressure}} hPa </p>
+      <i class="right floated orange huge {{getLatestReading.pressureTrend}} icon"></i>
       <p>
-        Max: {{maxPressure}} hPa
+        Max:{{getLatestReading.maxPressure}} hPa
       </p>
       <p>
-        Min: {{minPressure}} hPa
+        Min:{{getLatestReading.minPressure}} hPa
       </p>
     </div>
   </div>
 </div>
 
 </div>
-<!--
-<div class="column">
-        #{if _trend == 1}
-        <i class="right floated big arrow up ${_colour} icon"></i>
-        #{/if}
-        #{elseif _trend == -1}
-        <i class="right floated big arrow down ${_colour} icon"></i>
-        #{/elseif}
-      </div>
-    </div>
-  </div>
-</div>-->
