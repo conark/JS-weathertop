@@ -4,7 +4,7 @@ const accounts = require("./accounts.js");
 const logger = require("../utils/logger");
 const stationStore = require("../models/station-store");
 const uuid = require("uuid");
-const station = require("./station");
+
 const stationAnalytics = require("../utils/station-analytics");
 //const axios = require("axios");
 
@@ -12,10 +12,26 @@ const dashboard = {
   index(request, response) {
     logger.info("dashboard rendering");
     const loggedInUser = accounts.getCurrentUser(request);
+
+    let stationSort = stationStore.getUserStations(loggedInUser.id).sort(function (a,b){
+      return a.name.localeCompare(b.name);
+    });
+    const stationData = stationSort.map((station)=>{
+      return {
+        ...station,
+        latestReading: stationAnalytics.getLatestReading(station),
+      }
+    })
+
+    logger.info(" Stations stationSort: ");
+
+
     const viewData = {
+
       title: "Station Dashboard",
-      stations: stationStore.getUserStations(loggedInUser.id),
-      latestReading: stationAnalytics.getLatestReading,
+      stations: stationData,//stationStore.getUserStations(loggedInUser.id),
+
+      getLatestReading: stationAnalytics.getLatestReading,
     };
     logger.info("dashboard to render!!", stationStore.getUserStations(loggedInUser.id));
     logger.info(" latestReading", stationAnalytics.getLatestReading);
@@ -43,29 +59,7 @@ const dashboard = {
     stationStore.addStation(newStation);
     response.redirect("/dashboard");
   },
-  /*
-  async addreport(request, response) {
-    logger.info("rendering new report");
-    let report = {};
-    const latitude = request.body.latitude;
-    const longitude = request.body.longitude;
-    const requestUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lng}&units=metric&appid=YOUR_API_KEY_HERE`
-    const result = await axios.get(requestUrl);
-    if (result.status == 200) {
-      const reading = result.data.current;
-      report.code = reading.weather[0].id;
-      report.temperature = reading.temp;
-      report.windSpeed = reading.wind_speed;
-      report.pressure = reading.pressure;
-      report.windDirection = reading.wind_deg;
-    }
-    console.log(report);
-    const viewData = {
-      title: "Weather Report",
-      reading: report
-    };
-    response.render("dashboard", viewData);
-  }*/
+
 };
 
 module.exports = dashboard;

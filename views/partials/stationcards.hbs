@@ -1,0 +1,88 @@
+<!-- You MUST include jQuery before Fomantic -->
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script>
+<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/fomantic-ui@2.8.8/dist/semantic.min.css">
+<script src="https://cdn.jsdelivr.net/npm/fomantic-ui@2.8.8/dist/semantic.min.js"></script>
+<div class="ui five doubling cards">
+
+  <div class="card">
+    <div class="content">
+      <i class="right floated huge purple map pin icon"></i>
+      <div class="header">
+        <h2 class="ui header"> {{name}}</h2>
+      </div>
+      <br>
+      <div class="ui left aligned content">
+        <p>Latitude: {{latitude}} </p>
+        <p>Longitude: {{longitude}} </p>
+      </div>
+    </div>
+  </div>
+  <div class="card">
+    <div class="content">
+      <i class="right floated {{ latestReading.weatherIconColour }} huge {{latestReading.weatherIcon}} icon"></i>
+      <div class="header">
+        <h2 class="ui header">Weather</h2>
+      </div>
+      <br>
+      <div class="ui left aligned content">
+        <p> {{ latestReading.weatherConvert}} </p>
+      </div>
+    </div>
+  </div>
+  <div class="card">
+    <div class="content">
+      <i class="right floated huge blue temperature high icon"></i>
+      <div class="header">
+        <h2 class="ui header">Temp</h2>
+      </div>
+      <br>
+      <div class="left aligned content">
+        <p> {{latestReading.temperature}} °C</p>
+        <p> {{latestReading.tempF}} °F</p>
+      </div>
+      <div class="right aligned content">
+        <i class="right floated blue huge {{latestReading.tempTrend}} icon"></i>
+      </div>
+      <div class="left aligned content">
+        <p> Max: {{latestReading.maxTemp}}°C </p>
+        <p> Min: {{latestReading.minTemp}}°C </p>
+      </div>
+    </div>
+  </div>
+  <div class="card">
+    <div class="content">
+      <i class="right floated huge green wind icon"></i>
+      <div class="header">
+        <h2 class="ui header">Wind</h2>
+      </div>
+      <br>
+      <div class="left aligned content">
+        <p> {{latestReading.beaufort}} bft</p>
+        <p> {{latestReading.windDirection}}</p>
+        <p> Feels like {{latestReading.windChill}}</p>
+        <i class="right floated green huge {{latestReading.windTrend}} icon"></i>
+        <p> Max: {{latestReading.maxWind}} kMh </p>
+        <p> Min: {{latestReading.minWind}} kMh  </p>
+      </div>
+    </div>
+  </div>
+  <div class="card">
+    <div class="content">
+      <i class="right floated huge orange life ring outline icon"></i>
+      <div class="header">
+        <h2 class="ui header">Pressure</h2>
+      </div>
+      <br>
+      <div class="left aligned content">
+        <p> {{latestReading.pressure}} hPa </p>
+        <i class="right floated orange huge {{latestReading.pressureTrend}} icon"></i>
+        <p>
+          Max:{{latestReading.maxPressure}} hPa
+        </p>
+        <p>
+          Min:{{latestReading.minPressure}} hPa
+        </p>
+      </div>
+    </div>
+  </div>
+</div>

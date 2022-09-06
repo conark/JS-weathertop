@@ -195,6 +195,15 @@
           "windSpeed": 67,
           "windDirection": 34,
           "pressure": 30
+        },
+        {
+          "id": "63473ee0-2e23-11ed-85ca-63ea32b99704",
+          "date": "2022-09-06T20:35:04.266Z",
+          "code": 200,
+          "temperature": 8,
+          "windSpeed": 78,
+          "windDirection": 67,
+          "pressure": 40
         }
       ]
     }

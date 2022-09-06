@@ -16,9 +16,6 @@ const stationCtrl = {
       station: stationStore.getStation(id),
     getLatestReading: stationAnalytics.getLatestReading(station),
 
-/* stationSummary :{
-     latestReading: stationAnalytics.getLatestReading(station)
-   }*/
 };
 response.render("station", viewData);
 },
