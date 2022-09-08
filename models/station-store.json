@@ -206,6 +206,33 @@
           "pressure": 40
         }
       ]
+    },
+    {
+      "id": "f6e3e470-2fc0-11ed-b152-9b55833803ae",
+      "userid": "3ad52697-6d98-4d80-8273-084de55a86c0",
+      "name": "Toyota",
+      "latitude": "43",
+      "longitude": "23",
+      "readings": [
+        {
+          "id": "01285f10-2fc1-11ed-b152-9b55833803ae",
+          "date": "2022-09-08T21:55:51.297Z",
+          "code": 300,
+          "temperature": 12,
+          "windSpeed": 1222,
+          "windDirection": 12,
+          "pressure": 122
+        },
+        {
+          "id": "2df49270-2fc1-11ed-b152-9b55833803ae",
+          "date": "2022-09-08T21:57:06.455Z",
+          "code": 100,
+          "temperature": 12,
+          "windSpeed": 122,
+          "windDirection": 23,
+          "pressure": 2000
+        }
+      ]
     }
   ]
 }
